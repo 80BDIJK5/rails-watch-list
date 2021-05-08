@@ -5,6 +5,7 @@
     <div class="col-6">
       <%= simple_form_for @list do |f|%>
         <%= f.input :name, placeholder: 'Give your list a name'%>
+        <%= f.input :photo, as: :file %>
         <%= f.submit class: 'btn btn-flat' %>
       <% end %>
       <br>
