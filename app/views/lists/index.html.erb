@@ -1,9 +1,24 @@
-<h1>All movie lists</h1>
+<div class="banner">
+  <h1>This is an amazing movie lists application</h1>
+  <a class="btn btn-flat" href="<%= new_list_path %>">Create a list</a>
+</div>
+
 
 <div class="lists">
-  <ul>
-    <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-    <% end %>
-  </ul>
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="card-container">
+        <% @lists.each do |list| %>
+          <div class="co-12 colsm-6 col-md-4">
+            <%= link_to list_path(list), class:'text-decoration-none' do %>
+              <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/collection/4712892/)">
+                <%= list.name %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
